@@ -24,7 +24,7 @@ const Card = ({title, image, description}) => {
             </Text>
             <TouchableHighlight 
                 style={styles.button}
-                underlayColor="#EEE"
+                underlayColor="#ff6659"
                 onPress={onPressButton}>
                 <Text style={styles.buttonText}>Ver mas</Text>
             </TouchableHighlight>
@@ -41,28 +41,40 @@ Card.propTypes = {
 const styles = StyleSheet.create({
     container: {
         flex: 0,
-        backgroundColor: "#0F0",
+        backgroundColor: "#FFF",
         padding: 10,
+        borderRadius: 3,
     },
     title: {
-        fontSize: 30
+        fontSize: 30,
+        padding: 5,
+        backgroundColor: '#9a0007',
+        textAlign: 'center',
     },
     mainImage: {
         height: 190,      
     },
     button: {
-        height: 30,
+        height: 38,
         marginTop: 10,
-        backgroundColor: "#999", 
+        backgroundColor: "#d32f2f", 
+        width: 140,
+        alignSelf: 'flex-end',
+        borderRadius: 3,
     },
     buttonText: {
         fontSize: 20,
-        color: "#222",
+        lineHeight: 38,
+        color: "#fff",
+        textAlign:'center',
     },
     description: {
         marginLeft: 10,
+        marginRight: 10,
+        marginTop: 20,
+        marginBottom: 20,
         fontSize: 13,
-        color: "#EEE",
+        color: "#000",
     }
 });
 

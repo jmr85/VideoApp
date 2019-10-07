@@ -1,14 +1,26 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {ScrollView, Text} from 'react-native';
+import PropTypes from 'prop-types';
+import Card from './Card';
 
-const Items = ['Item 1','Item 2','Item 3']
 
-const CardSet = () => (
-    <View>
+const CardSet = ({items}) => (
+    <ScrollView>
         {
-            Items.map(item => <Text>{item}</Text>)
+            items.map(item => <Card 
+            key={item.title}
+            {...item}
+            ></Card>)
         }
-    </View>
+    </ScrollView>
 );
-
+CardSet.propTypes = {
+    items: PropTypes.arrayOf(
+        PropTypes.shape(
+            {
+                title: PropTypes.string.isRequired,
+                image: PropTypes.string.isRequired,
+                description: PropTypes.string.isRequired,
+            })).isRequired,
+};
 export default CardSet;
