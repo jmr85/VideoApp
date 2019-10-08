@@ -4,14 +4,16 @@ import {View,
     Text, 
     Image, 
     TouchableHighlight, 
-    StyleSheet} from 'react-native';
+    StyleSheet,
+    Linking} from 'react-native';
 
-const Card = ({title, image, description}) => {
+const Card = ({title, image, description, url}) => {
     const imageSource = {
         uri: image
     };
     const onPressButton = () => {
         console.log("Se preciono el boton");
+        Linking.openURL(url);
     };
     return (
         <View style={styles.container}>
