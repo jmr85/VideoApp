@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CardSet from './components/CardSet';
 import cards from './data';
+import Constants from 'expo-constants';
 
 export default class App extends React.Component {
   render (){
@@ -21,5 +22,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: Constants.statusBarHeight,
   },
 });
